@@ -14,6 +14,7 @@ def validPassport(passportDict):
         index = passportDict["hgt"].find("cm")
         if not ((int(passportDict["hgt"][0:index]) >= 150) & (int(passportDict["hgt"][0:index]) <= 193)):
             return False
+    #added after reddit help
     if passportDict["hgt"].find("in") == -1 and passportDict["hgt"].find("cm") == -1:
         return False
     if not (re.search('#[0-9a-f]{6}',passportDict["hcl"])):

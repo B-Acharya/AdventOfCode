@@ -27,11 +27,15 @@ def countCal(currentbag, bags):
     else:
         return False
 def countBags(currentBag, bags):
+    #set a counter to get the total for each run
     currentTotal = 0
+    #if the bag cannot contain an extra bag then return zero to stop the count
     if bags[currentBag]=={"empty":0}:
         return 0
     else:
+        #check all the bags to get the total 
         for bag in bags[currentBag].keys():
+            # the toal for all the bags separately 
             currentTotal += bags[currentBag][bag] + bags[currentBag][bag]*countBags(bag, bags)
         return currentTotal
 

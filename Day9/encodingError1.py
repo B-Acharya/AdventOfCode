@@ -5,6 +5,14 @@ def validNumber(listofNums, number):
     return True
 
 def contigousSet(listOfNumbers,number):
+    """
+        funtion to find the contigonous set 
+        inputs:
+                list of all the numbers 
+                Number of the sum
+        outputs:
+                sum of min and max of the set
+    """
     sum = 0
     for i in range(len(listOfNumbers)):
         sum += listOfNumbers[i]

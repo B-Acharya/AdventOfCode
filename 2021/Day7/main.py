@@ -17,7 +17,9 @@ if __name__=="__main__":
     max_pos = max(nums)
     best = np.inf
     for pos in range(max_pos):
-        total = np.sum(list(map(sum_part_two, np.abs(nums - pos))))
+        # total = np.sum(list(map(sum_part_two, np.abs(nums - pos))))
+        # faster
+        total = np.sum([np.sum(np.arange(i+1)) for i in np.abs(nums - pos)])
         if total < best:
             best = total
     print(best)

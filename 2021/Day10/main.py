@@ -18,7 +18,7 @@ if __name__=="__main__":
     new_list = []
     for line in data:
         queue = []
-        for i, char in enumerate(line):
+        for char in line:
             if char in opening:
                 queue.append(char)
             else:
@@ -34,13 +34,10 @@ if __name__=="__main__":
     for line in new_list:
         total = 0
         for letter in line[::-1]:
-            print(letter)
             total*=5
             total+= autocomplete[letter]
-        print(total)
         all_total.append(total)
     all_total.sort()
-    print(all_total)
     print(all_total[len(all_total)//2 ])
     print(syntax)
       
